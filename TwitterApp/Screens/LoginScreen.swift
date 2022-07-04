@@ -32,7 +32,7 @@ struct LoginScreen: View {
                                 UserDefaults.isSignedIn = true
                                 UserDefaults.userId = user.uid
                                 // go to the timeline screen
-                                coordinator.path.append(.timeline)
+                                coordinator.path.append(.home)
                             }
                         case .failure(let error):
                             vm.errorMessage = error.errorMessage

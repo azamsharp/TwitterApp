@@ -28,7 +28,7 @@
 		8DC22AE528734876003D8C42 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AE428734876003D8C42 /* LoginViewModel.swift */; };
 		8DC22AE828734AAD003D8C42 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AE728734AAD003D8C42 /* UserDefault.swift */; };
 		8DC22AEA28734D25003D8C42 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AE928734D25003D8C42 /* UserDefaults+Extensions.swift */; };
-		8DC22AEC28734E8A003D8C42 /* TimelineScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AEB28734E8A003D8C42 /* TimelineScreen.swift */; };
+		8DC22AEC28734E8A003D8C42 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AEB28734E8A003D8C42 /* HomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +50,7 @@
 		8DC22AE428734876003D8C42 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8DC22AE728734AAD003D8C42 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		8DC22AE928734D25003D8C42 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
-		8DC22AEB28734E8A003D8C42 /* TimelineScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineScreen.swift; sourceTree = "<group>"; };
+		8DC22AEB28734E8A003D8C42 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 				8D226D1A28720EDC0067D994 /* RegistrationScreen.swift */,
 				3454F2A82872363D00ECCD6F /* NavigationBarContainerScreen.swift */,
 				8DC22ADD28732C5F003D8C42 /* LoginScreen.swift */,
-				8DC22AEB28734E8A003D8C42 /* TimelineScreen.swift */,
+				8DC22AEB28734E8A003D8C42 /* HomeScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 				3454F2A92872363D00ECCD6F /* NavigationBarContainerScreen.swift in Sources */,
 				8DC22AE828734AAD003D8C42 /* UserDefault.swift in Sources */,
 				8D226D1E287210010067D994 /* Constants.swift in Sources */,
-				8DC22AEC28734E8A003D8C42 /* TimelineScreen.swift in Sources */,
+				8DC22AEC28734E8A003D8C42 /* HomeScreen.swift in Sources */,
 				8DC22AEA28734D25003D8C42 /* UserDefaults+Extensions.swift in Sources */,
 				8DC22ADE28732C5F003D8C42 /* LoginScreen.swift in Sources */,
 				8D226D0C28720A4E0067D994 /* ContentView.swift in Sources */,

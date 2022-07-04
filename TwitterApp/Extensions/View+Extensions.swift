@@ -35,8 +35,8 @@ extension View {
                             Text("Login")
                         case .register:
                             RegistrationScreen()
-                        case .timeline:
-                            TimelineScreen() 
+                        case .home:
+                            HomeScreen() 
                     }
                 }.appLogoToolbar()
         }

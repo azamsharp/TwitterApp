@@ -11,7 +11,7 @@ import FirebaseCore
 enum Route: Hashable {
     case login
     case register
-    case timeline
+    case home
 }
 
 class Coordinator: ObservableObject {
@@ -37,8 +37,8 @@ struct TwitterAppApp: App {
                                 LoginScreen().appLogoToolbar()
                         case .register:
                                 RegistrationScreen().appLogoToolbar()
-                        case .timeline:
-                                TimelineScreen() 
+                        case .home:
+                                HomeScreen()
                         }
                     }
                    
