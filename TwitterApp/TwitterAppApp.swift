@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import FirebaseCore
 
 enum Route: Hashable {
     case login
@@ -16,6 +16,11 @@ enum Route: Hashable {
 
 @main
 struct TwitterAppApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {

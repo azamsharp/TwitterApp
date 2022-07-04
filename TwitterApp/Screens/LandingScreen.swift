@@ -11,12 +11,7 @@ struct LandingScreen: View {
     var body: some View {
         VStack {
             
-            Image(Constants.Icons.twitterIcon)
-                .resizable()
-                .frame(width: 50, height: 50)
-            
             Spacer()
-            
             
             Text("See what's happening \n in the world right now")
                 .fontWeight(.bold)
@@ -37,7 +32,14 @@ struct LandingScreen: View {
                 NavigationLink("Login", value: Route.login)
                 Spacer()
             }.padding()
-           
+            
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Image(Constants.Icons.twitterIcon)
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    }
+                }
         }
     }
 }
