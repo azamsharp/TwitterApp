@@ -8,10 +8,15 @@
 import Foundation
 import SwiftUI
 
+
+
 extension View {
     
     func embedNavigationStack() -> some View {
-        NavigationStack {
+        
+        @EnvironmentObject var appRoute: Coordinator
+        
+        return NavigationStack {
             self
                 .navigationDestination(for: Route.self) { route in
                     switch route {
