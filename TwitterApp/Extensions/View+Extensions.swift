@@ -18,7 +18,13 @@ extension View {
                         case .login:
                             Text("Login")
                         case .register:
-                            Text("Register")
+                            RegistrationScreen()
+                    }
+                }.toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Image(Constants.Icons.twitterIcon)
+                            .resizable()
+                            .frame(width: 50, height: 50)
                     }
                 }
         }
