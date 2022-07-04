@@ -12,6 +12,17 @@ import SwiftUI
 
 extension View {
     
+    
+    func appLogoToolbar() -> some View {
+        self.toolbar {
+            ToolbarItem(placement: .principal) {
+                Image(Constants.Icons.twitterIcon)
+                    .resizable()
+                    .frame(width: 50, height: 50)
+            }
+        }
+    }
+    
     func embedNavigationStack() -> some View {
         
         @EnvironmentObject var appRoute: Coordinator
@@ -24,14 +35,10 @@ extension View {
                             Text("Login")
                         case .register:
                             RegistrationScreen()
+                        case .timeline:
+                            TimelineScreen() 
                     }
-                }.toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Image(Constants.Icons.twitterIcon)
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                    }
-                }
+                }.appLogoToolbar()
         }
     }
 }

@@ -1,24 +1,21 @@
 //
-//  RegistrationScreen.swift
+//  LoginScreen.swift
 //  TwitterApp
 //
-//  Created by Mohammad Azam on 7/3/22.
+//  Created by Mohammad Azam on 7/4/22.
 //
 
 import SwiftUI
 
-struct RegistrationScreen: View {
+struct LoginScreen: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
     
-    @StateObject private var vm = RegistrationViewModel()
+    @StateObject private var vm = LoginViewModel()
     @EnvironmentObject var coordinator: Coordinator
     
-    @State private var foo: String?
-    
     var body: some View {
-    
         VStack(spacing: 20) {
             Spacer().frame(height: 75)
             TextField("Email", text: $email)
@@ -28,34 +25,39 @@ struct RegistrationScreen: View {
             
             Button {
                 // action
-                vm.register(email: email, password: password) { result in
+                vm.login(email: email, password: password) { result in
                     switch result {
-                        case .success(_):
-                            coordinator.path.append(Route.login)
+                        case .success(let user):
+                            if let user {
+                                UserDefaults.isSignedIn = true
+                                UserDefaults.userId = user.uid
+                                // go to the timeline screen
+                                coordinator.path.append(.timeline)
+                            }
                         case .failure(let error):
                             vm.errorMessage = error.errorMessage
                     }
                 }
+                
             } label: {
-                Text("Register")
+                Text("Login")
                     .frame(maxWidth: .infinity, maxHeight: 44)
             }.buttonStyle(.borderedProminent)
             .tint(.black)
             .padding([.top], 20)
             
-            
             Spacer()
-            .navigationTitle("Registeration")
+            .navigationTitle("Login")
         }.padding()
             .alert(item: $vm.errorMessage) { errorMessage in
-                Alert(title: Text("Registration failed"), message: Text(errorMessage))
+                Alert(title: Text("Authentication failed"), message: Text(errorMessage))
             }
+
     }
 }
 
-struct RegistrationScreen_Previews: PreviewProvider {
+struct LoginScreen_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationScreen()
-            .embedNavigationStack()
+        LoginScreen().embedNavigationStack()
     }
 }

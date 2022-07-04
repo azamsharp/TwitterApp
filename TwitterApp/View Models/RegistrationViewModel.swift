@@ -8,24 +8,18 @@
 import Foundation
 import FirebaseAuth
 
-enum RegistrationError: Error, Identifiable {
-    case invalidCredentials
-    
-    var id: UUID {
-        UUID() 
-    }
-}
 
 class RegistrationViewModel: ObservableObject {
     
-    @Published var error: RegistrationError?
+    @Published var errorMessage: String? 
     
-    func register(email: String, password: String, completion: @escaping (Result<Bool, RegistrationError>) -> Void) {
+    func register(email: String, password: String, completion: @escaping (Result<Bool, FBError>) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             
-            if error != nil {
+            if let error {
                 DispatchQueue.main.async {
-                    completion(.failure(.invalidCredentials))
+                    print(error)
+                    completion(.failure(.error(error.localizedDescription)))
                 }
             } else {
                 DispatchQueue.main.async {

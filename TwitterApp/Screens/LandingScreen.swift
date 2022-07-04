@@ -33,13 +33,8 @@ struct LandingScreen: View {
                 Spacer()
             }.padding()
             
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Image(Constants.Icons.twitterIcon)
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                    }
-                }
+                .appLogoToolbar()
+            
         }
     }
 }
