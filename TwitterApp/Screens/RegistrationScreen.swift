@@ -13,6 +13,7 @@ struct RegistrationScreen: View {
     @State private var password: String = ""
     
     @StateObject private var vm = RegistrationViewModel()
+    @EnvironmentObject var appRoute: Coordinator
     
     var body: some View {
     
@@ -25,19 +26,28 @@ struct RegistrationScreen: View {
             
             Button {
                 // action
-                vm.register(email: email, password: password)
+                vm.register(email: email, password: password) { result in
+                    switch result {
+                        case .success(_):
+                            appRoute.path.append(Route.login)
+                        case .failure(let error):
+                            vm.error = error
+                    }
+                }
             } label: {
                 Text("Register")
                     .frame(maxWidth: .infinity, maxHeight: 44)
             }.buttonStyle(.borderedProminent)
             .tint(.black)
             .padding([.top], 20)
-
             
             
             Spacer()
             .navigationTitle("Registeration")
         }.padding()
+            .alert(item: $vm.error) { error in
+                Alert(title: Text("Failed to register!"))
+            }
     }
 }
 
