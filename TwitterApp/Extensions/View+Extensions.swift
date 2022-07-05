@@ -38,7 +38,7 @@ extension View {
                         case .home:
                             HomeScreen() 
                     }
-                }.appLogoToolbar()
+                }//.appLogoToolbar()
         }
     }
 }

@@ -13,5 +13,8 @@ struct Constants {
         static let twitterIcon = "twitter-icon"
     }
     
+    struct StaticText {
+        static let composeTweetDefaultText = "What's happening?"
+    }
     
 }
