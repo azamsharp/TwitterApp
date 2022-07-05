@@ -14,18 +14,13 @@ struct ComposeTweetScreen: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            ZStack(alignment: .topLeading) {
-                if tweetText.isEmpty {
-                    Text("What's happening?")
-                        .padding([.bottom], 10)
-                        .opacity(0.4)
-                      
-                }
-                
-                TextEditor(text: $tweetText)
-                        .padding()
-                
-            }.padding()
+            
+            TextEditor(text: $tweetText)
+                .overlay(alignment: .topLeading) {
+                    Text("What's happening").opacity(tweetText.isEmpty ? 0.4: 0.0)
+                        .position(x: 75, y: 20)
+                }.padding()
+            
             Spacer()
             Divider()
             HStack {
