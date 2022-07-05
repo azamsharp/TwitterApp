@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    
+    @State private var isPresented: Bool = false
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             TabView {
@@ -35,6 +38,7 @@ struct HomeScreen: View {
             // add tweet button
             Button {
                 // add tweet button
+                isPresented = true 
             } label: {
                 Image(systemName: "plus.circle.fill")
                     .foregroundColor(.blue)
@@ -44,6 +48,8 @@ struct HomeScreen: View {
             }.padding([.bottom], 60)
                 .padding([.trailing], 20)
 
+        }.sheet(isPresented: $isPresented) {
+            ComposeTweetScreen()
         }
         
        
