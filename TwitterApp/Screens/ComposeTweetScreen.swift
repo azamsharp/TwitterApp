@@ -13,9 +13,20 @@ struct ComposeTweetScreen: View {
     @State private var tweetText: String = ""
     
     var body: some View {
-        VStack {
-            TextEditor(text: $tweetText)
-                .padding()
+        VStack(alignment: .leading) {
+            ZStack(alignment: .topLeading) {
+                if tweetText.isEmpty {
+                    Text("What's happening?")
+                        .padding([.bottom], 10)
+                        .opacity(0.4)
+                      
+                }
+                
+                TextEditor(text: $tweetText)
+                        .padding()
+                
+            }.padding()
+            Spacer()
             Divider()
             HStack {
                 Image(systemName: "photo")
@@ -41,7 +52,7 @@ struct ComposeTweetScreen: View {
                     }
                 }
                 .onAppear {
-                    UITextView.appearance().backgroundColor = .systemGray5
+                    //UITextView.appearance().backgroundColor = .systemGray5
                 }
         }.embedNavigationStack()
     }
