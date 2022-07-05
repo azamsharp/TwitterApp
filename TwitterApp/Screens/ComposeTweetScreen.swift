@@ -42,13 +42,12 @@ struct ComposeTweetScreen: View {
                         Button("Tweet") {
                             // send the tweet
                         }.buttonStyle(.borderedProminent)
-                            .clipShape(RoundedRectangle(cornerRadius: 20.0, style: .continuous))
+                            .clipShape(RoundedRectangle(cornerRadius: 16.0, style: .circular))
                             .disabled(tweetText.isEmpty)
+                          
                     }
                 }
-                .onAppear {
-                    //UITextView.appearance().backgroundColor = .systemGray5
-                }
+               
         }.embedNavigationStack()
     }
 }

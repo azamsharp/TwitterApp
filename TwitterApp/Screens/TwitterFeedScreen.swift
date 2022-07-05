@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeScreen: View {
+struct TwitterFeedScreen: View {
     
     @State private var isPresented: Bool = false
     
@@ -35,10 +35,9 @@ struct HomeScreen: View {
                     }
             }
             
-            // add tweet button
             Button {
                 // add tweet button
-                isPresented = true 
+                isPresented = true
             } label: {
                 Image(systemName: "plus.circle.fill")
                     .foregroundColor(.blue)
@@ -56,8 +55,8 @@ struct HomeScreen: View {
     }
 }
 
-struct TimelineScreen_Previews: PreviewProvider {
+struct TwitterFeedScreen_Previews: PreviewProvider {
     static var previews: some View {
-        HomeScreen()
+        TwitterFeedScreen()
     }
 }

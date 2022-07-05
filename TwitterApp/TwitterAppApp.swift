@@ -38,7 +38,7 @@ struct TwitterAppApp: App {
                         case .register:
                                 RegistrationScreen().appLogoToolbar()
                         case .home:
-                                HomeScreen()
+                                TwitterFeedScreen()
                         }
                     }
                    
