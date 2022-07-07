@@ -13,8 +13,9 @@ struct Constants {
         static let twitterIcon = "twitter-icon"
     }
     
-    struct StaticText {
+    struct StaticValues {
         static let composeTweetDefaultText = "What's happening?"
+        static let maximumTweetCount = 140
     }
     
 }

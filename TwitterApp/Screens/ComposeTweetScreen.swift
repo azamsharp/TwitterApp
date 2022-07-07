@@ -12,6 +12,10 @@ struct ComposeTweetScreen: View {
     @Environment(\.dismiss) private var dismiss
     @State private var tweetText: String = ""
     
+    var isTweetButtonDisabled: Bool {
+        tweetText.isEmpty || tweetText.count >= Constants.StaticValues.maximumTweetCount
+    }
+    
     var body: some View {
         VStack(alignment: .leading) {
             
@@ -26,7 +30,7 @@ struct ComposeTweetScreen: View {
             HStack {
                 Image(systemName: "photo")
                 Spacer()
-                Image(systemName: "circle")
+                TweetCountGauge(tweetCount: tweetText.count)
             }
             .foregroundColor(.blue)
             .font(.system(size: 28))
@@ -43,7 +47,7 @@ struct ComposeTweetScreen: View {
                             // send the tweet
                         }.buttonStyle(.borderedProminent)
                             .clipShape(RoundedRectangle(cornerRadius: 16.0, style: .circular))
-                            .disabled(tweetText.isEmpty)
+                            .disabled(isTweetButtonDisabled)
                           
                     }
                 }
