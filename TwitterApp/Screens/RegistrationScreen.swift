@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RegistrationScreen: View {
     
+    @State private var name: String = ""
+    @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -20,31 +22,40 @@ struct RegistrationScreen: View {
     var body: some View {
     
         VStack(spacing: 20) {
-            Spacer().frame(height: 75)
-            TextField("Email", text: $email)
-            Divider()
-            SecureField("Password", text: $password)
-            Divider()
+            Group {
+                Spacer().frame(height: 15)
+                TextField("Name", text: $name)
+                Divider()
+                TextField("Username", text: $username)
+                Divider()
+                TextField("Email", text: $email)
+                Divider()
+                SecureField("Password", text: $password)
+                Divider()
+            }
             
             Button {
                 // action
-                vm.register(email: email, password: password) { result in
-                    switch result {
-                        case .success(_):
-                            coordinator.path.append(Route.login)
-                        case .failure(let error):
-                            vm.errorMessage = error.errorMessage
+                vm.register(name: name, username: username, email: email, password: password) { result in
+                    
+                    DispatchQueue.main.async {
+                        switch result {
+                            case .success(_):
+                                coordinator.path.append(Route.login)
+                            case .failure(let error):
+                                vm.errorMessage = error.errorMessage
+                        }
                     }
+                   
                 }
             } label: {
                 Text("Register")
                     .frame(maxWidth: .infinity, maxHeight: 44)
             }.buttonStyle(.borderedProminent)
             .tint(.black)
-            .padding([.top], 20)
-            
-            
+            .padding([.top], 50)
             Spacer()
+            
             .navigationTitle("Registeration")
         }.padding()
             .alert(item: $vm.errorMessage) { errorMessage in

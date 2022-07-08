@@ -12,6 +12,8 @@ struct ComposeTweetScreen: View {
     @Environment(\.dismiss) private var dismiss
     @State private var tweetText: String = ""
     
+    @StateObject private var vm = ComposeTweetViewModel()
+    
     var isTweetButtonDisabled: Bool {
         tweetText.isEmpty || tweetText.count >= Constants.StaticValues.maximumTweetCount
     }
@@ -44,7 +46,17 @@ struct ComposeTweetScreen: View {
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Tweet") {
-                            // send the tweet
+                               
+                            // save the tweet
+                            vm.saveTweet(tweet: Tweet(userName: UserDefaults.userId, text: tweetText)) { result in
+                                switch result {
+                                    case .success(_):
+                                        dismiss()
+                                    case .failure(let error):
+                                        vm.errorMessage = error.localizedDescription
+                                }
+                            }
+                            
                         }.buttonStyle(.borderedProminent)
                             .clipShape(RoundedRectangle(cornerRadius: 16.0, style: .circular))
                             .disabled(isTweetButtonDisabled)
