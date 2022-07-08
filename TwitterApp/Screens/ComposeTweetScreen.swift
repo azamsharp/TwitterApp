@@ -48,7 +48,7 @@ struct ComposeTweetScreen: View {
                         Button("Tweet") {
                                
                             // save the tweet
-                            vm.saveTweet(tweet: Tweet(userName: UserDefaults.userId, text: tweetText)) { result in
+                            vm.saveTweet(tweet: Tweet(userId: UserDefaults.userId, text: tweetText)) { result in
                                 switch result {
                                     case .success(_):
                                         dismiss()

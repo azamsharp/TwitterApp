@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		343D084D2878B839004A07EA /* TwitterFeedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343D084C2878B839004A07EA /* TwitterFeedScreen.swift */; };
 		3454F2A92872363D00ECCD6F /* NavigationBarContainerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3454F2A82872363D00ECCD6F /* NavigationBarContainerScreen.swift */; };
 		3454F2C528724D8200ECCD6F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3454F2C428724D8200ECCD6F /* GoogleService-Info.plist */; };
 		3454F2C828724E9A00ECCD6F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3454F2C728724E9A00ECCD6F /* FirebaseAuth */; };
@@ -31,11 +32,12 @@
 		8DC22AE528734876003D8C42 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AE428734876003D8C42 /* LoginViewModel.swift */; };
 		8DC22AE828734AAD003D8C42 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AE728734AAD003D8C42 /* UserDefault.swift */; };
 		8DC22AEA28734D25003D8C42 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AE928734D25003D8C42 /* UserDefaults+Extensions.swift */; };
-		8DC22AEC28734E8A003D8C42 /* TwitterFeedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AEB28734E8A003D8C42 /* TwitterFeedScreen.swift */; };
+		8DC22AEC28734E8A003D8C42 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AEB28734E8A003D8C42 /* HomeScreen.swift */; };
 		8DC22AEE2873AA67003D8C42 /* ComposeTweetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AED2873AA67003D8C42 /* ComposeTweetScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		343D084C2878B839004A07EA /* TwitterFeedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterFeedScreen.swift; sourceTree = "<group>"; };
 		3454F2A82872363D00ECCD6F /* NavigationBarContainerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarContainerScreen.swift; sourceTree = "<group>"; };
 		3454F2C428724D8200ECCD6F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3454F2D0287251F000ECCD6F /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -57,7 +59,7 @@
 		8DC22AE428734876003D8C42 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8DC22AE728734AAD003D8C42 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		8DC22AE928734D25003D8C42 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
-		8DC22AEB28734E8A003D8C42 /* TwitterFeedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterFeedScreen.swift; sourceTree = "<group>"; };
+		8DC22AEB28734E8A003D8C42 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		8DC22AED2873AA67003D8C42 /* ComposeTweetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTweetScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,8 +147,9 @@
 				8D226D1A28720EDC0067D994 /* RegistrationScreen.swift */,
 				3454F2A82872363D00ECCD6F /* NavigationBarContainerScreen.swift */,
 				8DC22ADD28732C5F003D8C42 /* LoginScreen.swift */,
-				8DC22AEB28734E8A003D8C42 /* TwitterFeedScreen.swift */,
+				8DC22AEB28734E8A003D8C42 /* HomeScreen.swift */,
 				8DC22AED2873AA67003D8C42 /* ComposeTweetScreen.swift */,
+				343D084C2878B839004A07EA /* TwitterFeedScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -280,7 +283,7 @@
 				8D226D1E287210010067D994 /* Constants.swift in Sources */,
 				8D4273BD2878857500ECA9D5 /* ComposeTweetViewModel.swift in Sources */,
 				8D4273BB287757E600ECA9D5 /* TweetCountGauge.swift in Sources */,
-				8DC22AEC28734E8A003D8C42 /* TwitterFeedScreen.swift in Sources */,
+				8DC22AEC28734E8A003D8C42 /* HomeScreen.swift in Sources */,
 				8DC22AEA28734D25003D8C42 /* UserDefaults+Extensions.swift in Sources */,
 				8DC22ADE28732C5F003D8C42 /* LoginScreen.swift in Sources */,
 				8D226D0C28720A4E0067D994 /* ContentView.swift in Sources */,
@@ -290,6 +293,7 @@
 				8DC22AE528734876003D8C42 /* LoginViewModel.swift in Sources */,
 				8D226D212872114B0067D994 /* View+Extensions.swift in Sources */,
 				8D226D0A28720A4E0067D994 /* TwitterAppApp.swift in Sources */,
+				343D084D2878B839004A07EA /* TwitterFeedScreen.swift in Sources */,
 				8D4273BF2878859A00ECA9D5 /* Tweet.swift in Sources */,
 				8DC22AE328734849003D8C42 /* FBError.swift in Sources */,
 			);

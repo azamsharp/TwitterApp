@@ -36,7 +36,7 @@ extension View {
                         case .register:
                             RegistrationScreen()
                         case .home:
-                            TwitterFeedScreen() 
+                            HomeScreen() 
                     }
                 }//.appLogoToolbar()
         }
