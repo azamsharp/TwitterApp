@@ -8,14 +8,15 @@
 import Foundation
 
 struct Tweet: Codable, Identifiable {
-    var documentId: String?
+    var documentID: String?
     let userId: String
     let text: String
     var noOfLikes: Int?
     var noOfComments: Int?
-    var noOfRetweets: Int? 
+    var noOfRetweets: Int?
+    var isLikedByCurrentUser: Bool = false 
     
     var id: String {
-        documentId ?? UUID().uuidString
+        documentID ?? UUID().uuidString
     }
 }

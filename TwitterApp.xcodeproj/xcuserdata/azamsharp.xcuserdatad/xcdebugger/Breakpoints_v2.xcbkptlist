@@ -3,4 +3,116 @@
    uuid = "E6E62DDF-3F41-45C1-98B1-FFC6354FDDA0"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EDD8866C-AC16-4B1A-802A-202E2F7BA98E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TwitterApp/View Models/TwitterFeedViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "updateLikes(like:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "080E1F22-ECB3-4F27-90EA-3C5FA5742078"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TwitterApp/View Models/TwitterFeedViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "updateLikes(like:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "080E1F22-ECB3-4F27-90EA-3C5FA5742078 - 3403197d473ab823"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for TwitterApp.TwitterFeedViewModel.updateLikes(like: TwitterApp.Like) async -&gt; ()"
+                  moduleName = "TwitterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/azamsharp/Desktop/TwitterApp/TwitterApp/View%20Models/TwitterFeedViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "238">
+               </Location>
+               <Location
+                  uuid = "080E1F22-ECB3-4F27-90EA-3C5FA5742078 - 8d26f2f1aef4e87b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for TwitterApp.TwitterFeedViewModel.updateLikes(like: TwitterApp.Like) async -&gt; ()"
+                  moduleName = "TwitterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/azamsharp/Desktop/TwitterApp/TwitterApp/View%20Models/TwitterFeedViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  uuid = "080E1F22-ECB3-4F27-90EA-3C5FA5742078 - 5e39c92ea63642d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for TwitterApp.TwitterFeedViewModel.updateLikes(like: TwitterApp.Like) async -&gt; ()"
+                  moduleName = "TwitterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/azamsharp/Desktop/TwitterApp/TwitterApp/View%20Models/TwitterFeedViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  uuid = "080E1F22-ECB3-4F27-90EA-3C5FA5742078 - 9ba0a8f63736ec29"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for TwitterApp.TwitterFeedViewModel.updateLikes(like: TwitterApp.Like) async -&gt; ()"
+                  moduleName = "TwitterApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/azamsharp/Desktop/TwitterApp/TwitterApp/View%20Models/TwitterFeedViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "126">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B05B7F17-10F9-417B-A188-F61998916707"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TwitterApp/View Models/TwitterFeedViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "updateLikes(like:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

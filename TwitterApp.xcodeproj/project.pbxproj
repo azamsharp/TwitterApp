@@ -28,6 +28,7 @@
 		8D4273BF2878859A00ECA9D5 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4273BE2878859A00ECA9D5 /* Tweet.swift */; };
 		8D4273C32878C82F00ECA9D5 /* TwitterFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4273C22878C82F00ECA9D5 /* TwitterFeedViewModel.swift */; };
 		8D4273C52878CC6F00ECA9D5 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4273C42878CC6F00ECA9D5 /* BaseViewModel.swift */; };
+		8D4273C72879C8DF00ECA9D5 /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4273C62879C8DF00ECA9D5 /* Like.swift */; };
 		8DC22ADE28732C5F003D8C42 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22ADD28732C5F003D8C42 /* LoginScreen.swift */; };
 		8DC22AE02873350F003D8C42 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22ADF2873350F003D8C42 /* String+Extensions.swift */; };
 		8DC22AE328734849003D8C42 /* FBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AE228734849003D8C42 /* FBError.swift */; };
@@ -57,6 +58,7 @@
 		8D4273BE2878859A00ECA9D5 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		8D4273C22878C82F00ECA9D5 /* TwitterFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterFeedViewModel.swift; sourceTree = "<group>"; };
 		8D4273C42878CC6F00ECA9D5 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		8D4273C62879C8DF00ECA9D5 /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		8DC22ADD28732C5F003D8C42 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		8DC22ADF2873350F003D8C42 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		8DC22AE228734849003D8C42 /* FBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBError.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				8D4273BE2878859A00ECA9D5 /* Tweet.swift */,
+				8D4273C62879C8DF00ECA9D5 /* Like.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				8DC22ADE28732C5F003D8C42 /* LoginScreen.swift in Sources */,
 				8D226D0C28720A4E0067D994 /* ContentView.swift in Sources */,
 				8D226D1928720AE70067D994 /* LandingScreen.swift in Sources */,
+				8D4273C72879C8DF00ECA9D5 /* Like.swift in Sources */,
 				8D226D1B28720EDC0067D994 /* RegistrationScreen.swift in Sources */,
 				3454F2D1287251F000ECCD6F /* RegistrationViewModel.swift in Sources */,
 				8D4273C32878C82F00ECA9D5 /* TwitterFeedViewModel.swift in Sources */,

@@ -11,6 +11,10 @@ struct TwitterFeedScreen: View {
     
     @StateObject private var vm = TwitterFeedViewModel()
     
+    private func updateLikeFor(tweetDocumentId: String) async {
+        await vm.updateLikes(like: Like(tweetDocumentId: tweetDocumentId, userId: UserDefaults.userId))
+    }
+    
     var body: some View {
         List(vm.tweets) { tweet in
             HStack(alignment: .top) {
@@ -41,7 +45,16 @@ struct TwitterFeedScreen: View {
                         }
                       
                         HStack {
-                            Image(systemName: "heart")
+                            Image(systemName: tweet.isLikedByCurrentUser ? "heart.fill": "heart")
+                                .onTapGesture {
+                                    
+                                    guard let tweetDocId = tweet.documentID else {
+                                        return
+                                    }
+                                    Task {
+                                        await updateLikeFor(tweetDocumentId: tweetDocId)
+                                    }
+                                }
                             Text(tweet.noOfLikes != nil ? "\(tweet.noOfLikes!)": "\(Int.random(in: 1...2600))")
                         }
                        
