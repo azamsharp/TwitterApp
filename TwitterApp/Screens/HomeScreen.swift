@@ -14,7 +14,7 @@ struct HomeScreen: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             TabView {
-                TwitterFeedScreen()
+                HomeTimelineScreen()
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }

@@ -19,7 +19,6 @@ class ComposeTweetViewModel: ObservableObject {
         db = Firestore.firestore()
     }
     
-    
     func saveTweet(tweet: Tweet, completion: @escaping (Result<Bool, FBError>) -> Void) {
         
         do {

@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-
+/*
 class TwitterFeedViewModel: BaseViewModel {
     
     var db: Firestore
@@ -83,6 +83,7 @@ class TwitterFeedViewModel: BaseViewModel {
         
     }
     
+    /*
     private func setupSubscriptionsForUserLikes(tweets: [Tweet], completion: ([Tweet]) -> Void) {
         
         var tweetsWithLikes = [Tweet]()
@@ -104,7 +105,7 @@ class TwitterFeedViewModel: BaseViewModel {
             completion(tweetsWithLikes.isEmpty ? tweets: tweetsWithLikes)
         }
         
-    }
+    } */
      
     
     private func setupSubscriptions() {
@@ -134,4 +135,4 @@ class TwitterFeedViewModel: BaseViewModel {
             }
     }
     
-}
+} */

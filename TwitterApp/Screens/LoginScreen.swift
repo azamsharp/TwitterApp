@@ -9,8 +9,8 @@ import SwiftUI
 
 struct LoginScreen: View {
     
-    @State private var email: String = ""
-    @State private var password: String = ""
+    @State private var email: String = "azamsharp@gmail.com"
+    @State private var password: String = "password"
     
     @StateObject private var vm = LoginViewModel()
     @EnvironmentObject var coordinator: Coordinator
