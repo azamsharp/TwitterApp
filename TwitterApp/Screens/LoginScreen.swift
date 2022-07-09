@@ -19,6 +19,8 @@ struct LoginScreen: View {
         VStack(spacing: 20) {
             Spacer().frame(height: 75)
             TextField("Email", text: $email)
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
             Divider()
             SecureField("Password", text: $password)
             Divider()

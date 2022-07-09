@@ -10,7 +10,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-
+@MainActor 
 class RegistrationViewModel: ObservableObject {
     
     @Published var errorMessage: String?
@@ -20,27 +20,29 @@ class RegistrationViewModel: ObservableObject {
         db = Firestore.firestore()
     }
     
-    func register(name: String, username: String, email: String, password: String, completion: @escaping (Result<Bool, FBError>) -> Void) {
+    func register(name: String, username: String, email: String, password: String) async -> Bool {
         
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
-            
-            if let error {
-                   completion(.failure(.error(error.localizedDescription)))
-            } else if let result {
+        var isRegistered = false
+        
+        do {
+            let userRef = db.collection("users").document(username)
+            let userDoc = try await userRef.getDocument()
+            if userDoc.exists {
+                isRegistered = false
+                errorMessage = "Username already taken!"
+            } else {
+                let result = try await Auth.auth().createUser(withEmail: email, password: password)
+                // save in firestore
+                try await self.db.collection("users").document(username)
+                    .setData(["name": name,"username": username, "userId": result.user.uid])
                 
-                // save user name and username in Firestore
-                self?.db.collection("users").document(result.user.uid).setData(
-                    ["name": name,"username": username]
-                ) { error in
-                    if let error {
-                        completion(.failure(.error(error.localizedDescription)))
-                    } else {
-                        completion(.success(true))
-                    }
-                }
+                isRegistered = true
             }
         }
-            
+        catch {
+            errorMessage = error.localizedDescription
+        }
+        
+        return isRegistered
     }
-    
 }

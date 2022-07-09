@@ -27,8 +27,12 @@ struct RegistrationScreen: View {
                 TextField("Name", text: $name)
                 Divider()
                 TextField("Username", text: $username)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
                 Divider()
                 TextField("Email", text: $email)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
                 Divider()
                 SecureField("Password", text: $password)
                 Divider()
@@ -36,18 +40,13 @@ struct RegistrationScreen: View {
             
             Button {
                 // action
-                vm.register(name: name, username: username, email: email, password: password) { result in
-                    
-                    DispatchQueue.main.async {
-                        switch result {
-                            case .success(_):
-                                coordinator.path.append(Route.login)
-                            case .failure(let error):
-                                vm.errorMessage = error.errorMessage
-                        }
+                Task {
+                    let isRegistered = await vm.register(name: name, username: username.lowercased(), email: email, password: password)
+                    if isRegistered {
+                        coordinator.path.append(.login)
                     }
-                   
                 }
+                
             } label: {
                 Text("Register")
                     .frame(maxWidth: .infinity, maxHeight: 44)

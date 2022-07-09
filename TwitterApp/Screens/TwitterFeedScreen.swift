@@ -9,8 +9,51 @@ import SwiftUI
 
 struct TwitterFeedScreen: View {
     
+    @StateObject private var vm = TwitterFeedViewModel()
+    
     var body: some View {
-        Text("TwitterFeedScreen")
+        List(vm.tweets) { tweet in
+            HStack(alignment: .top) {
+                Image(systemName: "person.circle.fill")
+                    .font(.largeTitle)
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack {
+                        Text("Mohammad Azam")
+                            .fontWeight(.bold)
+                        Text("@azamsharp")
+                            .foregroundColor(Color.init(uiColor: UIColor.darkText))
+                            .opacity(0.6)
+                            .fontWeight(.bold)
+                    }
+                    
+                    Text(tweet.text)
+                    
+                    HStack(spacing: 30) {
+                        
+                        HStack {
+                            Image(systemName: "message")
+                            Text(tweet.noOfComments != nil ? "\(tweet.noOfComments!)": "485")
+                        }
+                       
+                        HStack {
+                            Image(systemName: "arrow.2.squarepath")
+                            Text(tweet.noOfRetweets != nil ? "\(tweet.noOfRetweets!)": "\(Int.random(in: 1...2600))")
+                        }
+                      
+                        HStack {
+                            Image(systemName: "heart")
+                            Text(tweet.noOfLikes != nil ? "\(tweet.noOfLikes!)": "\(Int.random(in: 1...2600))")
+                        }
+                       
+                        HStack {
+                            Image(systemName: "square.and.arrow.up")
+                        }
+                        
+                    }.padding([.top], 10)
+                        
+                }
+            }
+        }.listStyle(.plain)
     }
 }
 
