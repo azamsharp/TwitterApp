@@ -21,7 +21,7 @@ struct TweetCellView: View {
                     if let userInfo = tweet.userInfo {
                         Text(userInfo.name)
                             .fontWeight(.bold)
-                        Text("@azamsharp")
+                        Text("@\(userInfo.username)")
                             .foregroundColor(Color.init(uiColor: UIColor.darkText))
                             .opacity(0.6)
                             .fontWeight(.bold)
