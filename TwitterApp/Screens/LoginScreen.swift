@@ -29,10 +29,12 @@ struct LoginScreen: View {
                 // action
                 vm.login(email: email, password: password) { result in
                     switch result {
-                        case .success(let user):
-                            if let user {
+                        case .success(let userInfo):
+                            if let userInfo {
                                 UserDefaults.isSignedIn = true
-                                UserDefaults.userId = user.uid
+                                UserDefaults.userId = userInfo.userId
+                                UserDefaults.name = userInfo.name
+                                UserDefaults.username = userInfo.username 
                                 // go to the timeline screen
                                 coordinator.path.append(.home)
                             }

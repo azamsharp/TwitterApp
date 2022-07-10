@@ -31,11 +31,13 @@ class RegistrationViewModel: ObservableObject {
                 isRegistered = false
                 errorMessage = "Username already taken!"
             } else {
-                let result = try await Auth.auth().createUser(withEmail: email, password: password)
-                // save in firestore
-                try await self.db.collection("users").document(username)
-                    .setData(["name": name,"username": username, "userId": result.user.uid])
                 
+                let result = try await Auth.auth().createUser(withEmail: email, password: password)
+                
+                // save in firestore
+                try await self.db.collection("users").document(result.user.uid)
+                    .setData(["userId": result.user.uid, "name": name, "username": username, "email": email])
+                    
                 isRegistered = true
             }
         }

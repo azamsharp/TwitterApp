@@ -18,7 +18,7 @@ struct HomeTimelineScreen: View {
                     await vm.toggleLike(tweet: tweet, userId: UserDefaults.userId)
                 }
             })
-        }
+        }.listStyle(.plain)
     }
 }
 

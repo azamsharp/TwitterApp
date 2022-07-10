@@ -16,7 +16,33 @@ class HomeTimelineViewModel: BaseViewModel {
     
     override init() {
         super.init()
-        setupSubscriptions()
+        setupSubscriptions { [weak self] tweets in
+            
+            var results = [Tweet]()
+            
+            tweets.forEach { tweet in
+                var tweetCopy = tweet
+                self?.db.collection("users").document(tweetCopy.userId).getDocument(as: UserInfo.self) { result in
+                    switch result {
+                        case .success(let userInfo):
+                            tweetCopy.userInfo = userInfo
+                            results.append(tweetCopy)
+                            
+                            if results.count == tweets.count {
+                                DispatchQueue.main.async {
+                                    self?.tweets = results
+                                }
+                            }
+                            
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                    }
+                }
+                
+              
+                
+            }
+        }
     }
     
     func toggleLike(tweet: Tweet, userId: String) async {
@@ -58,12 +84,12 @@ class HomeTimelineViewModel: BaseViewModel {
         }
     }
     
-    private func setupSubscriptions() {
+    private func setupSubscriptions(completion: @escaping ([Tweet]) -> Void) {
         
         // listen for changes for the user
         db.collection("tweets")
-            .addSnapshotListener { [weak self] documentSnapshot, error in
-                
+            .addSnapshotListener { documentSnapshot, error in
+                print("SNAPSHOT")
                 guard let snapshot = documentSnapshot else {
                     return
                 }
@@ -72,12 +98,14 @@ class HomeTimelineViewModel: BaseViewModel {
                     return
                 }
                 
+                let tweets = documents.compactMap { doc in
+                    var tweet = try? doc.data(as: Tweet.self)
+                    tweet?.documentID = doc.documentID
+                    return tweet
+                }
+                
                 DispatchQueue.main.async {
-                    self?.tweets = documents.compactMap { doc in
-                        var tweet = try? doc.data(as: Tweet.self)
-                        tweet?.documentID = doc.documentID
-                        return tweet
-                    }
+                   completion(tweets)
                 }
             }
     }

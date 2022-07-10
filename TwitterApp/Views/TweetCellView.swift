@@ -18,12 +18,14 @@ struct TweetCellView: View {
                 .font(.largeTitle)
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
-                    Text("Mohammad Azam")
-                        .fontWeight(.bold)
-                    Text("@azamsharp")
-                        .foregroundColor(Color.init(uiColor: UIColor.darkText))
-                        .opacity(0.6)
-                        .fontWeight(.bold)
+                    if let userInfo = tweet.userInfo {
+                        Text(userInfo.name)
+                            .fontWeight(.bold)
+                        Text("@azamsharp")
+                            .foregroundColor(Color.init(uiColor: UIColor.darkText))
+                            .opacity(0.6)
+                            .fontWeight(.bold)
+                    }
                 }
                 
                 Text(tweet.text)
@@ -33,12 +35,12 @@ struct TweetCellView: View {
                     HStack {
                         Image(systemName: "message")
                         Text(tweet.noOfComments != nil ? "\(tweet.noOfComments!)": "485")
-                    }
+                    }.frame(maxWidth: .infinity)
                    
                     HStack {
                         Image(systemName: "arrow.2.squarepath")
-                        Text(tweet.noOfRetweets != nil ? "\(tweet.noOfRetweets!)": "\(Int.random(in: 1...2600))")
-                    }
+                        Text(tweet.noOfRetweets != nil ? "\(tweet.noOfRetweets!)": "\(Int.random(in: 1...500))")
+                    }.frame(maxWidth: .infinity)
                   
                     HStack {
                         Image(systemName: tweet.isLiked ? "heart.fill": "heart")
@@ -47,11 +49,11 @@ struct TweetCellView: View {
                                onLiked()
                             }
                         Text(tweet.likeCount > 0 ? "\(tweet.likeCount)": "")
-                    }
+                    }.frame(maxWidth: .infinity)
                    
                     HStack {
                         Image(systemName: "square.and.arrow.up")
-                    }
+                    }.frame(maxWidth: .infinity)
                     
                 }.padding([.top], 10)
             }

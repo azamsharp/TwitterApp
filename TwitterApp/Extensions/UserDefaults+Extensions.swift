@@ -15,4 +15,10 @@ extension UserDefaults {
     @UserDefault(key: "user_id", defaultValue: "")
     static var userId: String
     
+    @UserDefault(key: "name", defaultValue: "")
+    static var name: String
+    
+    @UserDefault(key: "user_name", defaultValue: "")
+    static var username: String
+    
 }

@@ -15,6 +15,7 @@ struct Tweet: Codable, Identifiable {
     var noOfComments: Int?
     var noOfRetweets: Int?
     var likes: [String] = [String]()
+    var userInfo: UserInfo?
     
     var isLiked: Bool {
         likes.contains(UserDefaults.userId)
@@ -27,4 +28,5 @@ struct Tweet: Codable, Identifiable {
     var id: String {
         documentID ?? UUID().uuidString
     }
+    
 }
