@@ -31,6 +31,7 @@ struct LoginScreen: View {
                     switch result {
                         case .success(let userInfo):
                             if let userInfo {
+                                
                                 UserDefaults.isSignedIn = true
                                 UserDefaults.userId = userInfo.userId
                                 UserDefaults.name = userInfo.name

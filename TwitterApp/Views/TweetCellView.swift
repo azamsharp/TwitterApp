@@ -11,6 +11,7 @@ struct TweetCellView: View {
     
     let tweet: Tweet
     let onLiked: () -> Void
+    let onRetweet: () -> Void
     
     var body: some View {
         HStack(alignment: .top) {
@@ -39,7 +40,11 @@ struct TweetCellView: View {
                    
                     HStack {
                         Image(systemName: "arrow.2.squarepath")
-                        Text(tweet.noOfRetweets != nil ? "\(tweet.noOfRetweets!)": "\(Int.random(in: 1...500))")
+                            .foregroundColor(tweet.isRetweeted ? .blue: .black)
+                            .onTapGesture {
+                                onRetweet()
+                            }
+                        Text(tweet.retweetCount > 0 ? "\(tweet.retweetCount)": "")
                     }.frame(maxWidth: .infinity)
                   
                     HStack {
@@ -64,6 +69,6 @@ struct TweetCellView: View {
 struct TweetCellView_Previews: PreviewProvider {
     static var previews: some View {
         let tweet = Tweet(userId: UserDefaults.userId, text: "Hello World!")
-        TweetCellView(tweet: tweet, onLiked: { })
+        TweetCellView(tweet: tweet, onLiked: { }, onRetweet: {} )
     }
 }
