@@ -14,8 +14,8 @@ class HomeTimelineViewModel: BaseViewModel {
     @Published var tweets = [Tweet]()
     var db: Firestore = Firestore.firestore()
     
-    let likeService = LikeService()
-    let retweetService = RetweetService()
+    private let likeService = LikeService()
+    private let retweetService = RetweetService()
     
     override init() {
       
@@ -38,7 +38,7 @@ class HomeTimelineViewModel: BaseViewModel {
                         if results.count == tweets.count {
                             DispatchQueue.main.async {
                                 self.tweets = results.sorted(by: { t1, t2 in
-                                    t1.dateCreated > t2.dateCreated
+                                    t1.dateUpdated > t2.dateUpdated
                                 })
                             }
                         }
@@ -54,7 +54,34 @@ class HomeTimelineViewModel: BaseViewModel {
         await likeService.toggleLike(tweet: tweet, userId: userId)
     }
     
-    func updateRetweet(tweet: Tweet, userId: String) async {
+    func retweet(tweet: Tweet, userId: String) async {
+        
+        // check if the tweet has been retweeted before
+        if tweet.isRetweeted {
+            Task {
+                await self.updateRetweet(tweet: tweet, userId: userId)
+            }
+        } else {
+            retweetService.retweet(tweet: tweet, userId: userId) { result in
+                switch result {
+                    case .success(let success):
+                        if success {
+                            Task {
+                                await self.updateRetweet(tweet: tweet, userId: userId)
+                            }
+                        }
+                       
+                    case .failure(let error):
+                        print(error)
+                }
+            }
+        }
+        
+        
+       
+    }
+    
+    private func updateRetweet(tweet: Tweet, userId: String) async {
         await retweetService.toggleRetweet(tweet: tweet, userId: userId)
     }
     

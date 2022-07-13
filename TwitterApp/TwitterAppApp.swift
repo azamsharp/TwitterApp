@@ -12,6 +12,7 @@ enum Route: Hashable {
     case login
     case register
     case home
+    case detail(Tweet)
 }
 
 class Coordinator: ObservableObject {
@@ -39,6 +40,8 @@ struct TwitterAppApp: App {
                                 RegistrationScreen().appLogoToolbar()
                         case .home:
                                 HomeScreen()
+                        case .detail(let tweet):
+                                TweetDetailsScreen(tweet: tweet)
                         }
                     }
                    

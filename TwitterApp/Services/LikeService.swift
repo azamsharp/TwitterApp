@@ -19,15 +19,13 @@ class LikeService {
             return
         }
         
-        guard let likes = tweet.likes else { return }
-        
-        if likes.contains(UserDefaults.userId) {
-           // remove the like
-            await removeLike(tweetDocumentId: tweetDocumentId, userId: UserDefaults.userId)
+        if tweet.likes.contains(UserDefaults.userId) {
+            // remove the like
+             await removeLike(tweetDocumentId: tweetDocumentId, userId: UserDefaults.userId)
         } else {
-            // add the like
             await addLike(tweetDocumentId: tweetDocumentId, userId: UserDefaults.userId)
         }
+      
     }
     
     private func addLike(tweetDocumentId: String, userId: String) async {

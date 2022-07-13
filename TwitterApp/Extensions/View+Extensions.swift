@@ -36,7 +36,9 @@ extension View {
                         case .register:
                             RegistrationScreen()
                         case .home:
-                            HomeScreen() 
+                            HomeScreen()
+                        case .detail:
+                            Text("DETAIL")
                     }
                 }//.appLogoToolbar()
         }

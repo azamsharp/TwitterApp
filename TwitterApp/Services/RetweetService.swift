@@ -12,6 +12,23 @@ import FirebaseFirestoreSwift
 class RetweetService {
     
     var db: Firestore = Firestore.firestore()
+    let twitterService = TweetService()
+    
+    func retweet(tweet: Tweet, userId: String, completion: @escaping (Result<Bool, FBError>) -> Void) {
+        
+        var tweet = tweet
+        tweet.dateUpdated = Date()
+        
+        twitterService.addTweet(tweet: tweet) { result in
+            switch result {
+                case .success(let retweeted):
+                    completion(.success(retweeted))
+                case .failure(let error):
+                    completion(.failure(error))
+            }
+        }
+    }
+    
     
     func toggleRetweet(tweet: Tweet, userId: String) async {
         
@@ -19,17 +36,9 @@ class RetweetService {
             return
         }
         
-        if tweet.retweets != nil {
-            if let retweets = tweet.retweets {
-                if retweets.contains(userId) {
-                    await removeRetweet(tweetDocumentId: tweetDocumentId, userId: UserDefaults.userId)
-                } else {
-                    await addRetweet(tweetDocumentId: tweetDocumentId, userId: UserDefaults.userId)
-                }
-            }
-            
+        if tweet.retweets.contains(userId) {
+            await removeRetweet(tweetDocumentId: tweetDocumentId, userId: UserDefaults.userId)
         } else {
-            // add the tweet
             await addRetweet(tweetDocumentId: tweetDocumentId, userId: UserDefaults.userId)
         }
       

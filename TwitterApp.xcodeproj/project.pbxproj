@@ -41,6 +41,8 @@
 		8DC22AEA28734D25003D8C42 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AE928734D25003D8C42 /* UserDefaults+Extensions.swift */; };
 		8DC22AEC28734E8A003D8C42 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AEB28734E8A003D8C42 /* HomeScreen.swift */; };
 		8DC22AEE2873AA67003D8C42 /* ComposeTweetScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC22AED2873AA67003D8C42 /* ComposeTweetScreen.swift */; };
+		8DE04CED287F348F00AD01F8 /* TweetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE04CEC287F348F00AD01F8 /* TweetService.swift */; };
+		8DE04CEF287F639500AD01F8 /* TweetDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE04CEE287F639500AD01F8 /* TweetDetailsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +77,8 @@
 		8DC22AE928734D25003D8C42 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		8DC22AEB28734E8A003D8C42 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		8DC22AED2873AA67003D8C42 /* ComposeTweetScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTweetScreen.swift; sourceTree = "<group>"; };
+		8DE04CEC287F348F00AD01F8 /* TweetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetService.swift; sourceTree = "<group>"; };
+		8DE04CEE287F639500AD01F8 /* TweetDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 				8DC22AEB28734E8A003D8C42 /* HomeScreen.swift */,
 				8DC22AED2873AA67003D8C42 /* ComposeTweetScreen.swift */,
 				343D084E2879EC6D004A07EA /* HomeTimelineScreen.swift */,
+				8DE04CEE287F639500AD01F8 /* TweetDetailsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 			children = (
 				8D9AD358287DE83000431ACC /* LikeService.swift */,
 				8D9AD35A287DFA3100431ACC /* RetweetService.swift */,
+				8DE04CEC287F348F00AD01F8 /* TweetService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -306,12 +312,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DC22AE02873350F003D8C42 /* String+Extensions.swift in Sources */,
+				8DE04CEF287F639500AD01F8 /* TweetDetailsScreen.swift in Sources */,
 				8D4273C52878CC6F00ECA9D5 /* BaseViewModel.swift in Sources */,
 				3454F2A92872363D00ECCD6F /* NavigationBarContainerScreen.swift in Sources */,
 				8D4273C9287A894700ECA9D5 /* UserInfo.swift in Sources */,
 				8DC22AEE2873AA67003D8C42 /* ComposeTweetScreen.swift in Sources */,
 				8DC22AE828734AAD003D8C42 /* UserDefault.swift in Sources */,
 				8D226D1E287210010067D994 /* Constants.swift in Sources */,
+				8DE04CED287F348F00AD01F8 /* TweetService.swift in Sources */,
 				8D4273BD2878857500ECA9D5 /* ComposeTweetViewModel.swift in Sources */,
 				8D4273BB287757E600ECA9D5 /* TweetCountGauge.swift in Sources */,
 				343D08512879EC7A004A07EA /* HomeTimelineViewModel.swift in Sources */,

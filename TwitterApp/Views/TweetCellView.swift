@@ -18,6 +18,11 @@ struct TweetCellView: View {
             Image(systemName: "person.circle.fill")
                 .font(.largeTitle)
             VStack(alignment: .leading, spacing: 10) {
+                Text(tweet.isRetweeted ? "You Retweeted": "")
+                    .foregroundColor(.gray)
+                    .fontWeight(.bold)
+                    .font(.caption)
+                    
                 HStack {
                     if let userInfo = tweet.userInfo {
                         Text(userInfo.name)

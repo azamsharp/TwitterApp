@@ -11,7 +11,8 @@ import FirebaseFirestoreSwift
 
 class ComposeTweetViewModel: ObservableObject {
     
-    @Published var errorMessage: String? 
+    @Published var errorMessage: String?
+    let tweetService = TweetService()
     
     var db: Firestore
     
@@ -20,22 +21,14 @@ class ComposeTweetViewModel: ObservableObject {
     }
     
     func saveTweet(tweet: Tweet, completion: @escaping (Result<Bool, FBError>) -> Void) {
-        
-        do {
-            
-            let _ = try db.collection("tweets").addDocument(from: tweet) { error in
-                if let error = error {
-                    completion(.failure(.error(error.localizedDescription)))
-                } else {
-                    // tweet saved successfully
-                    completion(.success(true))
-                }
+       
+        tweetService.addTweet(tweet: tweet) { result in
+            switch result {
+                case .success(let saved):
+                    completion(.success(saved))
+                case .failure(let error):
+                    completion(.failure(error))
             }
-            
-        } catch {
-            
         }
     }
-    
-    
 }
